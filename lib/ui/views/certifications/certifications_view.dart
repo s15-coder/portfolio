@@ -56,7 +56,7 @@ class CertificationsView extends StatelessWidget {
                       text: 'Let\'s contact him',
                       color: pageColor,
                       onTap: () {
-                        pageProvider.goTo(3);
+                        Navigator.pushNamed(context, '/contact/');
                       }),
                 )
               ],

@@ -20,7 +20,7 @@ class PageProvider extends ChangeNotifier {
     pageController.addListener(() {
       final index = pageController.page?.round() ?? 0;
       if (currentIndex != index) {
-        window.history.pushState(null, "ASdasdasd", "#${_pages[index]}");
+        window.history.pushState(null, "ASdasdasd", "#/${_pages[index]}");
         currentIndex = index;
         document.title = formatTitle(_pages[currentIndex]);
       }

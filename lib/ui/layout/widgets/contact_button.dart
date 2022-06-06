@@ -16,7 +16,10 @@ class ContactButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
           text: 'Contact',
           color: colors[pageProvider.currentIndex],
-          onTap: () {});
+          onTap: () {
+            Navigator.pushNamedAndRemoveUntil(
+                context, "/contact", (route) => false);
+          });
     });
   }
 }
