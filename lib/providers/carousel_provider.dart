@@ -14,7 +14,7 @@ class CarouselProvider extends ChangeNotifier {
   void startSlidingCertification() {
     slidingCertifications = true;
     _slidingcertificationsTimer =
-        Timer.periodic(Duration(milliseconds: 150), (timer) {
+        Timer.periodic(const Duration(milliseconds: 150), (timer) {
       try {
         final nextPosition = certificationsController.position.pixels + 10 >
                 certificationsController.position.maxScrollExtent
@@ -22,7 +22,7 @@ class CarouselProvider extends ChangeNotifier {
             : certificationsController.position.pixels + 10;
         certificationsController.animateTo(
           nextPosition.toDouble(),
-          duration: Duration(milliseconds: 150),
+          duration: const Duration(milliseconds: 150),
           curve: Curves.easeInToLinear,
         );
       } catch (e) {
@@ -41,7 +41,8 @@ class CarouselProvider extends ChangeNotifier {
 
   void startSlidingApp() {
     slidingApps = true;
-    _slidingAppsTimer = Timer.periodic(Duration(milliseconds: 150), (timer) {
+    _slidingAppsTimer =
+        Timer.periodic(const Duration(milliseconds: 150), (timer) {
       try {
         final nextPosition = appsController.position.pixels + 10 >
                 appsController.position.maxScrollExtent
@@ -49,7 +50,7 @@ class CarouselProvider extends ChangeNotifier {
             : appsController.position.pixels + 10;
         appsController.animateTo(
           nextPosition.toDouble(),
-          duration: Duration(milliseconds: 150),
+          duration: const Duration(milliseconds: 150),
           curve: Curves.easeInToLinear,
         );
       } catch (e) {

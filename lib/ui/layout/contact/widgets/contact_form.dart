@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/providers/contact_form_provider.dart';
-import 'package:portfolio/ui/layout/contact/widgets/custom_field.dart';
+import 'package:portfolio/ui/layout/contact/custom_field.dart';
 
 class ContactForm extends StatelessWidget {
   ContactForm({Key? key}) : super(key: key);

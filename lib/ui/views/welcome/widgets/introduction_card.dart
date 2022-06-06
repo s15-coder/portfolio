@@ -12,7 +12,7 @@ class IntroductionCard extends StatelessWidget {
       alignment: Alignment.center,
       margin: EdgeInsets.symmetric(horizontal: size.width > 750 ? 0 : 30),
       height: 300,
-      constraints: BoxConstraints(maxWidth: 300),
+      constraints: const BoxConstraints(maxWidth: 300),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
@@ -23,12 +23,12 @@ class IntroductionCard extends StatelessWidget {
             width: double.infinity,
             alignment: Alignment.topCenter,
             child: Transform.translate(
-              offset: Offset(0, -50),
+              offset: const Offset(0, -50),
               child: CustomCircularContainer(child: Image.asset('me.jpg')),
             ),
           ),
           Container(
-            margin: EdgeInsets.only(left: 20, right: 20, top: 80),
+            margin: const EdgeInsets.only(left: 20, right: 20, top: 80),
             child: Text(
               'Hello, this is the web page where you\'ll be able to know about me and my experience as Mobile Developer.',
               textAlign: TextAlign.justify,

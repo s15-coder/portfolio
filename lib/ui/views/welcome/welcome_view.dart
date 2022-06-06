@@ -47,8 +47,8 @@ class WelcomeView extends StatelessWidget {
                   ),
                   if (size.width <= 750)
                     Container(
-                        margin: EdgeInsets.only(top: 60),
-                        child: IntroductionCard())
+                        margin: const EdgeInsets.only(top: 60),
+                        child: const IntroductionCard())
                 ],
               ),
               if (size.width > 750)
@@ -64,7 +64,7 @@ class WelcomeView extends StatelessWidget {
                 )
             ],
           ),
-          if (size.width > 750) IntroductionCard()
+          if (size.width > 750) const IntroductionCard()
         ],
       ),
     );

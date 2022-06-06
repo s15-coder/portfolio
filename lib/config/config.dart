@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-final colors = [
+const colors = [
   Color.fromRGBO(103, 23, 146, 1),
   Color.fromRGBO(90, 21, 164, 1),
   Color.fromRGBO(77, 19, 182, 1),

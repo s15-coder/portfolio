@@ -1,9 +1,7 @@
-import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/providers/carousel_provider.dart';
 import 'package:portfolio/providers/page_provider.dart';
 import 'package:portfolio/routes/routes.dart';
-import 'package:portfolio/ui/layout/main_layout.dart';
 import 'package:provider/provider.dart';
 
 void main() {
