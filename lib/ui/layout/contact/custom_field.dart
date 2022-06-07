@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class CustomField extends StatelessWidget {
@@ -9,6 +7,7 @@ class CustomField extends StatelessWidget {
       this.maxLines,
       this.minLines,
       this.textCapitalization = TextCapitalization.sentences,
+      this.onChanged,
       this.validator})
       : super(key: key);
   final String label;
@@ -16,11 +15,13 @@ class CustomField extends StatelessWidget {
   final int? maxLines;
   final int? minLines;
   final String? Function(String?)? validator;
+  final void Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
       child: TextFormField(
+        onChanged: onChanged,
         validator: validator,
         keyboardType: TextInputType.multiline,
         textInputAction: TextInputAction.newline,
@@ -30,13 +31,13 @@ class CustomField extends StatelessWidget {
         style: const TextStyle(color: Colors.white),
         decoration: InputDecoration(
           errorBorder: const OutlineInputBorder(
-            borderSide: const BorderSide(
+            borderSide: BorderSide(
               color: Colors.white,
               width: 2,
             ),
           ),
           focusedErrorBorder: const OutlineInputBorder(
-            borderSide: const BorderSide(
+            borderSide: BorderSide(
               color: Colors.white,
               width: 2,
             ),
@@ -48,13 +49,13 @@ class CustomField extends StatelessWidget {
             style: const TextStyle(color: Colors.white),
           ),
           border: const OutlineInputBorder(
-            borderSide: const BorderSide(
+            borderSide: BorderSide(
               color: Colors.white,
               width: 1,
             ),
           ),
           enabledBorder: const OutlineInputBorder(
-            borderSide: const BorderSide(
+            borderSide: BorderSide(
               color: Colors.white,
               width: 1,
             ),

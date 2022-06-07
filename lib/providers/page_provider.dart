@@ -13,7 +13,6 @@ class PageProvider extends ChangeNotifier {
   int currentIndex = 0;
 
   void createScrollController(String routeName) {
-    print(routeName);
     currentIndex = getIndexPage(routeName);
     pageController = PageController(initialPage: currentIndex);
     document.title = formatTitle(_pages[currentIndex]);

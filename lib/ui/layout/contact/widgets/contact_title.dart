@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class ContactTitle extends StatelessWidget {
-  const ContactTitle({Key? key}) : super(key: key);
-
+  const ContactTitle({Key? key, required this.text}) : super(key: key);
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
-      child: const Text(
-        'Thanks for taking the time to reach out.\nHow can I help you?',
+      child: Text(
+        text,
         textAlign: TextAlign.center,
-        style: TextStyle(color: Colors.white, fontSize: 35),
+        style: const TextStyle(color: Colors.white, fontSize: 35),
       ),
     );
   }

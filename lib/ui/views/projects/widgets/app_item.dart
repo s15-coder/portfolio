@@ -1,8 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:portfolio/config/config.dart';
 import 'package:portfolio/models/app_item_model.dart';
+import 'package:portfolio/providers/page_provider.dart';
+import 'package:portfolio/services/alerts_service.dart';
 import 'package:portfolio/ui/views/projects/widgets/projects_carousel.dart';
+import 'package:provider/provider.dart';
 
 class AppItem extends StatefulWidget {
   const AppItem({
@@ -30,74 +34,98 @@ class _AppItemState extends State<AppItem> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onHover: (_) {
-        if (isHover) return;
-        isHover = true;
-        animationController.forward();
-      },
-      onExit: (_) {
-        if (!isHover) return;
-        isHover = false;
-
-        animationController.reverse();
-      },
-      cursor: SystemMouseCursors.click,
-      child: Stack(
-        children: [
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 20),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: SizedBox(
-                height: 170,
-                width: 300,
-                child: Transform.scale(
-                  child: Image.asset(
-                    widget.appItemModel.assetPath,
-                    fit: BoxFit.cover,
-                    alignment: Alignment.topCenter,
-                  ),
-                  scale: 1.1,
+    final size = MediaQuery.of(context).size;
+    return GestureDetector(
+      onTap: () {
+        if (size.width > 700) return;
+        final pageProvider = Provider.of<PageProvider>(context, listen: false);
+        AlertsService.showDecoratedAlert(
+            context: context,
+            color: colors[pageProvider.currentIndex],
+            icon: Icons.ads_click,
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  widget.appItemModel.textBelow!,
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-              ),
-            ),
-          ),
-          FadeTransition(
-            opacity: animation,
-            child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 20),
+                ...widget.appItemModel.options
+                    .map((e) => AppItemOption(appItemOptionModel: e))
+                    .toList()
+              ],
+            ));
+      },
+      child: MouseRegion(
+        onHover: (_) {
+          if (isHover) return;
+          isHover = true;
+          animationController.forward();
+        },
+        onExit: (_) {
+          if (!isHover) return;
+          isHover = false;
+
+          animationController.reverse();
+        },
+        cursor: SystemMouseCursors.click,
+        child: Stack(
+          children: [
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 20),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Container(
+                child: SizedBox(
                   height: 170,
                   width: 300,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      ...widget.appItemModel.options
-                          .map((e) => AppItemOption(appItemOptionModel: e))
-                          .toList(),
-                      if (widget.appItemModel.textBelow != null)
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 15),
-                          alignment: Alignment.center,
-                          child: Text(
-                            widget.appItemModel.textBelow!,
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500),
-                          ),
-                        )
-                    ],
+                  child: Transform.scale(
+                    child: Image.asset(
+                      widget.appItemModel.assetPath,
+                      fit: BoxFit.cover,
+                      alignment: Alignment.topCenter,
+                    ),
+                    scale: 1.1,
                   ),
-                  color: Colors.black.withOpacity(.6),
                 ),
               ),
             ),
-          ),
-        ],
+            if (size.width > 700)
+              FadeTransition(
+                opacity: animation,
+                child: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 20),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Container(
+                      height: 170,
+                      width: 300,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ...widget.appItemModel.options
+                              .map((e) => AppItemOption(appItemOptionModel: e))
+                              .toList(),
+                          if (widget.appItemModel.textBelow != null)
+                            Container(
+                              margin: EdgeInsets.symmetric(vertical: 15),
+                              alignment: Alignment.center,
+                              child: Text(
+                                widget.appItemModel.textBelow!,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            )
+                        ],
+                      ),
+                      color: Colors.black.withOpacity(.6),
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }
@@ -117,6 +145,7 @@ class _AppItemOptionState extends State<AppItemOption> {
   bool isHover = false;
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return MouseRegion(
       cursor: widget.appItemOptionModel.cursor,
       onHover: (_) => setState(() => {isHover = true}),
@@ -136,8 +165,12 @@ class _AppItemOptionState extends State<AppItemOption> {
                 ),
                 child: Text(
                   widget.appItemOptionModel.text,
-                  style:
-                      TextStyle(color: isHover ? Colors.black : Colors.white),
+                  style: TextStyle(
+                      color: size.width > 750
+                          ? isHover
+                              ? Colors.black
+                              : Colors.white
+                          : Colors.black),
                 ),
               ),
               Divider(

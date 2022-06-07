@@ -12,7 +12,7 @@ class RoutesHandlers {
       }
       final pageProvider = Provider.of<PageProvider>(context!, listen: false);
       pageProvider.createScrollController(params['page']!.first);
-      return const MainLayout();
     }
+    return const MainLayout();
   });
 }

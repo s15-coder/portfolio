@@ -12,7 +12,7 @@ class ProjectsCarousel extends StatelessWidget {
   Widget build(BuildContext context) {
     final carouselProvider = Provider.of<CarouselProvider>(context);
     final size = MediaQuery.of(context).size;
-    return Container(
+    return SizedBox(
         height: 150,
         width: size.width,
         child: GestureDetector(
