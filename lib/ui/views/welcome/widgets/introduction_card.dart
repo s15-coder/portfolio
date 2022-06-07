@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/config/config.dart';
 import 'package:portfolio/ui/widgets/custom_circular_container.dart';
 
 class IntroductionCard extends StatelessWidget {

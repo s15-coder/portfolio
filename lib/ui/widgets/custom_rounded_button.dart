@@ -20,7 +20,7 @@ class _CustomRounderButtonState extends State<CustomRounderButton> {
   bool isHover = false;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: widget.onTap,
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
@@ -28,7 +28,7 @@ class _CustomRounderButtonState extends State<CustomRounderButton> {
         onExit: (_) => setState(() => {isHover = false}),
         child: AnimatedContainer(
           padding: widget.padding ??
-              EdgeInsets.symmetric(
+              const EdgeInsets.symmetric(
                 horizontal: 20,
                 vertical: 10,
               ),

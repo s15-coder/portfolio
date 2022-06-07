@@ -5,8 +5,8 @@ class TemplateView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('TemplateView'),
+    return const Center(
+      child: const Text('TemplateView'),
     );
   }
 }
