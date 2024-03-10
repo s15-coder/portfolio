@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/images/images.dart';
-import 'package:portfolio/ui/widgets/custom_circular_container.dart';
+import 'package:estebancoder/config/styles/styles.dart';
+import 'package:estebancoder/core/images/images.dart';
+import 'package:estebancoder/ui/widgets/custom_circular_container.dart';
 
 class IntroductionCard extends StatelessWidget {
   const IntroductionCard({Key? key}) : super(key: key);
@@ -10,7 +11,8 @@ class IntroductionCard extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Container(
       alignment: Alignment.center,
-      margin: EdgeInsets.symmetric(horizontal: size.width > 750 ? 0 : 30),
+      margin: EdgeInsets.symmetric(
+          horizontal: size.width > 750 ? 0 : 30, vertical: UILayout.xxxlarge),
       height: 380,
       constraints: const BoxConstraints(maxWidth: 300),
       decoration: BoxDecoration(

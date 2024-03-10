@@ -1,24 +1,24 @@
 import 'package:flutter/cupertino.dart';
-import 'package:portfolio/core/images/images.dart';
+import 'package:estebancoder/core/images/images.dart';
 
-class AppItemModel {
+class AppItemImageModel {
   final AppImageAsset appImageAsset;
-  final List<AppItemOptionModel> options;
+  final List<AppItemImageOptionModel> options;
   final String? textBelow;
 
-  AppItemModel({
+  AppItemImageModel({
     required this.appImageAsset,
     required this.options,
     this.textBelow,
   });
 }
 
-class AppItemOptionModel {
+class AppItemImageOptionModel {
   final String text;
   final void Function()? onTap;
   final MouseCursor cursor;
 
-  AppItemOptionModel({
+  AppItemImageOptionModel({
     required this.text,
     this.onTap,
     this.cursor = SystemMouseCursors.click,

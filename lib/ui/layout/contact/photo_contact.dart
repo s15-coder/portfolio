@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/images/images.dart';
-import 'package:portfolio/ui/widgets/custom_circular_container.dart';
+import 'package:estebancoder/core/images/images.dart';
+import 'package:estebancoder/ui/widgets/custom_circular_container.dart';
 
 class PhotoContact extends StatelessWidget {
   const PhotoContact({Key? key, required this.pageColor}) : super(key: key);

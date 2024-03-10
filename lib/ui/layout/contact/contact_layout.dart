@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/config/config.dart';
-import 'package:portfolio/providers/contact_form_provider.dart';
-import 'package:portfolio/services/alerts_service.dart';
-import 'package:portfolio/ui/layout/contact/photo_contact.dart';
-import 'package:portfolio/ui/layout/contact/widgets/contact_app_bar.dart';
-import 'package:portfolio/ui/layout/contact/widgets/contact_form.dart';
-import 'package:portfolio/ui/layout/contact/widgets/contact_title.dart';
-import 'package:portfolio/ui/widgets/custom_rounded_button.dart';
+import 'package:estebancoder/config/config.dart';
+import 'package:estebancoder/providers/contact_form_provider.dart';
+import 'package:estebancoder/services/alerts_service.dart';
+import 'package:estebancoder/ui/layout/contact/photo_contact.dart';
+import 'package:estebancoder/ui/layout/contact/widgets/contact_app_bar.dart';
+import 'package:estebancoder/ui/layout/contact/widgets/contact_form.dart';
+import 'package:estebancoder/ui/layout/contact/widgets/contact_title.dart';
+import 'package:estebancoder/ui/widgets/custom_rounded_button.dart';
 import 'package:provider/provider.dart';
 
 class ContactLayout extends StatelessWidget {
@@ -17,9 +17,8 @@ class ContactLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     final contactFormProvider = Provider.of<ContactFormProvider>(context);
     final size = MediaQuery.of(context).size;
-    final pageColor = colors[0];
     return Scaffold(
-      backgroundColor: pageColor,
+      backgroundColor: AppColors.navy,
       body: SizedBox(
         height: size.height,
         width: size.width,
@@ -28,7 +27,7 @@ class ContactLayout extends StatelessWidget {
             SingleChildScrollView(
               child: Column(
                 children: [
-                  PhotoContact(pageColor: pageColor),
+                  PhotoContact(pageColor: AppColors.mint),
                   const ContactTitle(
                       text:
                           'Thanks for taking the time to reach out.\nHow can I help you?'),
@@ -37,7 +36,7 @@ class ContactLayout extends StatelessWidget {
                   const SizedBox(height: 30),
                   CustomRounderButton(
                     text: 'Submit',
-                    color: pageColor,
+                    color: AppColors.navy,
                     onTap: () async {
                       if (!contactFormProvider.formKey.currentState!
                           .validate()) {
@@ -73,9 +72,12 @@ class ContactLayout extends StatelessWidget {
   }
 
   Future<void> contactAlert(
-      BuildContext context, String text, IconData icon) async {
+    BuildContext context,
+    String text,
+    IconData icon,
+  ) async {
     await AlertsService.showDecoratedAlert(
-      color: colors[0],
+      color: AppColors.mint,
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -89,7 +91,7 @@ class ContactLayout extends StatelessWidget {
               const Spacer(),
               MaterialButton(
                 onPressed: () => Navigator.pop(context),
-                color: colors[0],
+                color: AppColors.mint,
                 child: const Text(
                   'OK',
                   style: TextStyle(color: Colors.white),

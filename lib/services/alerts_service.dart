@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/config/config.dart';
+import 'package:estebancoder/config/config.dart';
 
 class AlertsService {
   static Future<void> showDecoratedAlert(
@@ -72,8 +72,8 @@ class AlertsService {
             children: [
               const Text('Sending..'),
               LinearProgressIndicator(
-                color: colors[0],
-                backgroundColor: colors[0].withOpacity(.5),
+                color: AppColors.mint,
+                backgroundColor: AppColors.mint.withOpacity(.5),
               )
             ],
           ),

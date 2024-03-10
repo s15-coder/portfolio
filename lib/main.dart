@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/providers/contact_form_provider.dart';
-import 'package:portfolio/providers/menu_provider.dart';
-import 'package:portfolio/providers/page_provider.dart';
-import 'package:portfolio/routes/routes.dart';
+import 'package:estebancoder/providers/contact_form_provider.dart';
+import 'package:estebancoder/providers/page_provider.dart';
+import 'package:estebancoder/routes/routes.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -18,13 +17,12 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => PageProvider()),
-        ChangeNotifierProvider(create: (_) => MenuProvider()),
         ChangeNotifierProvider(create: (_) => ContactFormProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         onGenerateRoute: AppRouter.fluroRouter.generator,
-        title: 'Material App',
+        title: "Estebancoder",
         initialRoute: '/home',
       ),
     );

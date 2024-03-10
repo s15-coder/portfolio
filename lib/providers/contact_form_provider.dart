@@ -1,6 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:portfolio/services/api_service.dart';
+import 'package:estebancoder/services/api_service.dart';
 
 class ContactFormProvider extends ChangeNotifier {
   String name = '';

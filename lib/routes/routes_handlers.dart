@@ -1,7 +1,7 @@
 import 'package:fluro/fluro.dart';
-import 'package:portfolio/providers/page_provider.dart';
-import 'package:portfolio/ui/layout/contact/contact_layout.dart';
-import 'package:portfolio/ui/layout/main/main_layout.dart';
+import 'package:estebancoder/providers/page_provider.dart';
+import 'package:estebancoder/ui/layout/contact/contact_layout.dart';
+import 'package:estebancoder/ui/layout/main/main_layout.dart';
 import 'package:provider/provider.dart';
 
 class RoutesHandlers {

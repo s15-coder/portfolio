@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/images/images.dart';
-import 'package:portfolio/providers/menu_provider.dart';
-import 'package:portfolio/ui/layout/main/widgets/contact_button.dart';
-import 'package:provider/provider.dart';
+import 'package:estebancoder/core/images/images.dart';
+import 'package:estebancoder/ui/layout/main/widgets/contact_button.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final menuProvider = Provider.of<MenuProvider>(context, listen: false);
     final size = MediaQuery.of(context).size;
     return Container(
       width: size.width,
@@ -26,15 +23,6 @@ class CustomAppBar extends StatelessWidget {
           ),
           const Spacer(),
           const ContactButton(),
-          const SizedBox(width: 20),
-          IconButton(
-            onPressed: menuProvider.openMenu,
-            icon: const Icon(
-              Icons.menu,
-              color: Colors.white,
-              size: 30,
-            ),
-          ),
           const SizedBox(width: 20),
         ],
       ),
