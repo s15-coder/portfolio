@@ -24,7 +24,7 @@ class AppMenu extends StatelessWidget {
             ),
           ),
         AnimatedPositioned(
-          duration: Duration(milliseconds: 300),
+          duration: const Duration(milliseconds: 300),
           right: menuProvider.isMenuOpen ? 0 : -500,
           child: Container(
             height: size.height,
@@ -32,7 +32,7 @@ class AppMenu extends StatelessWidget {
             decoration: _decorationMenu(pageProvider),
             child: Column(
               children: [
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 MenuItem(
                   onTap: () {
                     pageProvider.goTo(0);
@@ -75,7 +75,7 @@ class AppMenu extends StatelessWidget {
       boxShadow: [
         BoxShadow(
             color: Colors.black.withOpacity(.2),
-            offset: Offset(-2, 00),
+            offset: const Offset(-2, 00),
             blurRadius: 5),
       ],
     );
@@ -114,11 +114,11 @@ class _MenuItemState extends State<MenuItem> {
           onTap: widget.onTap,
           child: Container(
             color: isHover ? Colors.white.withOpacity(.1) : Colors.transparent,
-            padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
             width: double.infinity,
             child: Text(
               widget.text,
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: const TextStyle(color: Colors.white, fontSize: 18),
             ),
           ),
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/core/images/images.dart';
 
 class ContactAppBar extends StatelessWidget {
   const ContactAppBar({Key? key}) : super(key: key);
@@ -13,8 +14,11 @@ class ContactAppBar extends StatelessWidget {
       child: Row(
         children: [
           Container(
-              margin: const EdgeInsets.only(left: 10, top: 5),
-              child: Image.asset('app_icon.jpg')),
+            margin: const EdgeInsets.only(left: 10, top: 5),
+            child: AppImage(
+              image: AppImages.appIcon,
+            ),
+          ),
           const Spacer(),
           IconButton(
             onPressed: () {

@@ -24,8 +24,8 @@ class _CustomRounderButtonState extends State<CustomRounderButton> {
       onTap: widget.onTap,
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
-        onHover: (_) => setState(() => {isHover = true}),
-        onExit: (_) => setState(() => {isHover = false}),
+        onHover: (_) => setState(() => isHover = true),
+        onExit: (_) => setState(() => isHover = false),
         child: AnimatedContainer(
           padding: widget.padding ??
               const EdgeInsets.symmetric(

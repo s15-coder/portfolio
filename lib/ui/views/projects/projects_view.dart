@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/config/config.dart';
-import 'package:portfolio/providers/carousel_provider.dart';
 import 'package:portfolio/providers/page_provider.dart';
 import 'package:portfolio/ui/views/projects/widgets/projects_carousel.dart';
-import 'package:portfolio/ui/widgets/circular_outlined_button.dart';
 import 'package:portfolio/ui/widgets/custom_rounded_button.dart';
 import 'package:provider/provider.dart';
 
@@ -13,7 +11,6 @@ class ProjectsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final pageProvider = Provider.of<PageProvider>(context, listen: false);
-    final carouselProvider = Provider.of<CarouselProvider>(context);
     final pageColor = colors[2];
     final size = MediaQuery.of(context).size;
     return Container(
@@ -21,7 +18,7 @@ class ProjectsView extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text(
+          const Text(
             'APPS',
             maxLines: 2,
             style: TextStyle(
@@ -30,25 +27,13 @@ class ProjectsView extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          ProjectsCarousel(),
-          CircularOutlinedButton(
-            color: pageColor,
-            iconData:
-                carouselProvider.slidingApps ? Icons.pause : Icons.play_arrow,
-            onTap: () {
-              if (carouselProvider.slidingApps) {
-                carouselProvider.stopSlidingApp();
-              } else {
-                carouselProvider.startSlidingApp();
-              }
-            },
-          ),
+          const ProjectsCarousel(),
           if (size.width > 750)
             Row(
               children: [
-                Spacer(),
+                const Spacer(),
                 Container(
-                  margin: EdgeInsets.only(right: 30),
+                  margin: const EdgeInsets.only(right: 30),
                   child: CustomRounderButton(
                       text: 'Does Esteban like to learn? ',
                       color: pageColor,

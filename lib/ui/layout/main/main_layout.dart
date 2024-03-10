@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/providers/page_provider.dart';
 import 'package:portfolio/ui/layout/main/widgets/app_menu.dart';
-import 'package:portfolio/ui/layout/main/widgets/contact_button.dart';
 import 'package:portfolio/ui/layout/main/widgets/custom_app_bar.dart';
 import 'package:portfolio/ui/views/about/about_view.dart';
 import 'package:portfolio/ui/views/certifications/certifications_view.dart';
@@ -26,10 +25,10 @@ class MainLayout extends StatelessWidget {
               scrollDirection: Axis.vertical,
               controller: pageProvider.pageController,
               physics: const BouncingScrollPhysics(),
-              children: [
-                const WelcomeView(),
-                const AboutView(),
-                const ProjectsView(),
+              children: const [
+                WelcomeView(),
+                AboutView(),
+                ProjectsView(),
                 CertificationsView(),
               ],
             ),

@@ -49,7 +49,6 @@ class AboutCard extends StatelessWidget {
               '- Firebase\n'
               '- Javascript\n'
               '- Node Js\n',
-              textAlign: TextAlign.justify,
               style: TextStyle(
                   height: size.width > 650 ? 1.5 : 1,
                   fontSize: 20,

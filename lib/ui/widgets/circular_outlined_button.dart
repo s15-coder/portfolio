@@ -19,8 +19,8 @@ class _CircularOutlinedButtonState extends State<CircularOutlinedButton> {
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
-      onHover: (_) => setState(() => {isHover = true}),
-      onExit: (_) => setState(() => {isHover = false}),
+      onHover: (_) => setState(() => isHover = true),
+      onExit: (_) => setState(() => isHover = false),
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
         onTap: widget.onTap,
@@ -36,7 +36,7 @@ class _CircularOutlinedButtonState extends State<CircularOutlinedButton> {
             borderRadius: BorderRadius.circular(100),
           ),
           child: AnimatedContainer(
-            duration: Duration(milliseconds: 300),
+            duration: const Duration(milliseconds: 300),
             alignment: Alignment.center,
             decoration: BoxDecoration(
               color: isHover ? Colors.white : widget.color,

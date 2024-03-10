@@ -42,7 +42,7 @@ class CustomField extends StatelessWidget {
               width: 2,
             ),
           ),
-          errorStyle: TextStyle(color: Colors.white),
+          errorStyle: const TextStyle(color: Colors.white),
           alignLabelWithHint: true,
           label: Text(
             label,

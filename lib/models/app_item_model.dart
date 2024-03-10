@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
+import 'package:portfolio/core/images/images.dart';
 
 class AppItemModel {
-  final String assetPath;
+  final AppImageAsset appImageAsset;
   final List<AppItemOptionModel> options;
   final String? textBelow;
 
   AppItemModel({
-    required this.assetPath,
+    required this.appImageAsset,
     required this.options,
     this.textBelow,
   });

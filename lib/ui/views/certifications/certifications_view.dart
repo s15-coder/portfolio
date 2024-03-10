@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/config/config.dart';
-import 'package:portfolio/providers/carousel_provider.dart';
-import 'package:portfolio/providers/page_provider.dart';
 import 'package:portfolio/ui/views/certifications/widgets/certification_caroucel.dart';
-import 'package:portfolio/ui/widgets/circular_outlined_button.dart';
 import 'package:portfolio/ui/widgets/custom_rounded_button.dart';
-import 'package:provider/provider.dart';
 
 class CertificationsView extends StatelessWidget {
-  CertificationsView({Key? key}) : super(key: key);
+  const CertificationsView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final pageProvider = Provider.of<PageProvider>(context, listen: false);
-    final carouselProvider = Provider.of<CarouselProvider>(context);
     final size = MediaQuery.of(context).size;
     final pageColor = colors[3];
     return Container(
@@ -32,32 +26,21 @@ class CertificationsView extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          CertificatonCaroucel(),
-          CircularOutlinedButton(
-            color: pageColor,
-            iconData: carouselProvider.slidingCertifications
-                ? Icons.pause
-                : Icons.play_arrow,
-            onTap: () {
-              if (carouselProvider.slidingCertifications) {
-                carouselProvider.stopSlidingCertification();
-              } else {
-                carouselProvider.startSlidingCertification();
-              }
-            },
-          ),
+          const CertificatonCaroucel(),
           if (size.width > 750)
             Row(
               children: [
-                Spacer(),
+                const Spacer(),
                 Container(
-                  margin: EdgeInsets.only(right: 30),
+                  margin: const EdgeInsets.only(right: 30),
                   child: CustomRounderButton(
-                      text: 'Let\'s contact him',
-                      color: pageColor,
-                      onTap: () {
-                        Navigator.pushNamed(context, '/contact/');
-                      }),
+                    text: 'Let\'s contact him',
+                    color: pageColor,
+                    onTap: () {
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, "/contact", (route) => false);
+                    },
+                  ),
                 )
               ],
             )

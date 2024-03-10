@@ -8,7 +8,7 @@ class CustomCircularContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipOval(
       child: Container(
-        padding: EdgeInsets.all(7),
+        padding: const EdgeInsets.all(7),
         color: Colors.white,
         height: 100,
         width: 100,

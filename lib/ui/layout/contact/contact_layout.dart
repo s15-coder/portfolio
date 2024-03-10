@@ -83,24 +83,24 @@ class ContactLayout extends StatelessWidget {
             text,
             textAlign: TextAlign.center,
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           Row(
             children: [
-              Spacer(),
+              const Spacer(),
               MaterialButton(
                 onPressed: () => Navigator.pop(context),
                 color: colors[0],
-                child: Text(
+                child: const Text(
                   'OK',
                   style: TextStyle(color: Colors.white),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               )
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
         ],
       ),
       context: context,

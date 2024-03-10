@@ -13,7 +13,7 @@ class ContactButton extends StatelessWidget {
 
     return Builder(builder: (context) {
       return CustomRounderButton(
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
           text: 'Contact',
           color: colors[pageProvider.currentIndex],
           onTap: () {

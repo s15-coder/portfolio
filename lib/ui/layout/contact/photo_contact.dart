@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/core/images/images.dart';
 import 'package:portfolio/ui/widgets/custom_circular_container.dart';
 
 class PhotoContact extends StatelessWidget {
@@ -13,7 +14,9 @@ class PhotoContact extends StatelessWidget {
       child: CustomCircularContainer(
         child: Container(
           padding: const EdgeInsets.all(5),
-          child: ClipOval(child: Image.asset('me.jpg')),
+          child: ClipOval(
+            child: AppImage(image: AppImages.me),
+          ),
           color: pageColor,
         ),
       ),

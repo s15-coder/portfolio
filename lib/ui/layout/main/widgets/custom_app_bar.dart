@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/core/images/images.dart';
 import 'package:portfolio/providers/menu_provider.dart';
 import 'package:portfolio/ui/layout/main/widgets/contact_button.dart';
 import 'package:provider/provider.dart';
@@ -16,9 +17,13 @@ class CustomAppBar extends StatelessWidget {
       height: 50,
       child: Row(
         children: [
-          Container(
-              margin: const EdgeInsets.only(left: 10, top: 5),
-              child: Image.asset('app_icon.jpg')),
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 10,
+              top: 5,
+            ),
+            child: AppImage(image: AppImages.appIcon),
+          ),
           const Spacer(),
           const ContactButton(),
           const SizedBox(width: 20),

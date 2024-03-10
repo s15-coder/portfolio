@@ -25,7 +25,7 @@ class AlertsService {
                 color: Colors.white,
                 child: content),
             Transform.translate(
-              offset: Offset(0, -30),
+              offset: const Offset(0, -30),
               child: Container(
                 width: size.width <= 400 ? size.width * .8 : 300,
                 height: 60,

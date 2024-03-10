@@ -1,11 +1,9 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:portfolio/config/config.dart';
+import 'package:portfolio/core/images/images.dart';
 import 'package:portfolio/models/app_item_model.dart';
 import 'package:portfolio/providers/page_provider.dart';
 import 'package:portfolio/services/alerts_service.dart';
-import 'package:portfolio/ui/views/projects/widgets/projects_carousel.dart';
 import 'package:provider/provider.dart';
 
 class AppItem extends StatefulWidget {
@@ -27,7 +25,7 @@ class _AppItemState extends State<AppItem> with TickerProviderStateMixin {
     super.initState();
     animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
     );
     animation = Tween(begin: 0.0, end: 1.0).animate(animationController);
   }
@@ -48,7 +46,7 @@ class _AppItemState extends State<AppItem> with TickerProviderStateMixin {
               children: [
                 Text(
                   widget.appItemModel.textBelow!,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 ...widget.appItemModel.options
                     .map((e) => AppItemOption(appItemOptionModel: e))
@@ -72,17 +70,16 @@ class _AppItemState extends State<AppItem> with TickerProviderStateMixin {
         child: Stack(
           children: [
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 20),
+              margin: const EdgeInsets.symmetric(horizontal: 20),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: SizedBox(
                   height: 170,
                   width: 300,
                   child: Transform.scale(
-                    child: Image.asset(
-                      widget.appItemModel.assetPath,
-                      fit: BoxFit.cover,
-                      alignment: Alignment.topCenter,
+                    child: AppImage(
+                      image: widget.appItemModel.appImageAsset,
+                      boxFit: BoxFit.cover,
                     ),
                     scale: 1.1,
                   ),
@@ -107,11 +104,11 @@ class _AppItemState extends State<AppItem> with TickerProviderStateMixin {
                               .toList(),
                           if (widget.appItemModel.textBelow != null)
                             Container(
-                              margin: EdgeInsets.symmetric(vertical: 15),
+                              margin: const EdgeInsets.symmetric(vertical: 15),
                               alignment: Alignment.center,
                               child: Text(
                                 widget.appItemModel.textBelow!,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 20,
                                     fontWeight: FontWeight.w500),
@@ -148,8 +145,8 @@ class _AppItemOptionState extends State<AppItemOption> {
     final size = MediaQuery.of(context).size;
     return MouseRegion(
       cursor: widget.appItemOptionModel.cursor,
-      onHover: (_) => setState(() => {isHover = true}),
-      onExit: (_) => setState(() => {isHover = false}),
+      onHover: (_) => setState(() => isHover = true),
+      onExit: (_) => setState(() => isHover = false),
       child: GestureDetector(
         onTap: widget.appItemOptionModel.onTap,
         child: Container(
@@ -158,7 +155,7 @@ class _AppItemOptionState extends State<AppItemOption> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                margin: EdgeInsets.only(
+                margin: const EdgeInsets.only(
                   left: 10,
                   top: 10,
                   bottom: 10,
@@ -173,7 +170,7 @@ class _AppItemOptionState extends State<AppItemOption> {
                           : Colors.black),
                 ),
               ),
-              Divider(
+              const Divider(
                 height: 1,
                 color: Colors.white,
               )

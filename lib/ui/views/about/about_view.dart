@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/config/config.dart';
 import 'package:portfolio/providers/page_provider.dart';
 import 'package:portfolio/ui/views/about/widgets/about_card.dart';
-import 'package:portfolio/ui/views/welcome/widgets/introduction_card.dart';
 import 'package:portfolio/ui/widgets/custom_rounded_button.dart';
 import 'package:provider/provider.dart';
 
@@ -22,7 +21,7 @@ class AboutView extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          if (size.width > 750) AboutCard(),
+          if (size.width > 750) const AboutCard(),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -46,7 +45,7 @@ class AboutView extends StatelessWidget {
                     },
                   ),
                 ),
-              if (size.width <= 750) AboutCard()
+              if (size.width <= 750) const AboutCard()
             ],
           ),
         ],
