@@ -17,7 +17,6 @@ class ProjectsWidget extends StatelessWidget {
       width: size.width,
       child: Column(
         children: [
-          const SizedBox(height: UILayout.xxlarge),
           AppItem(
             appImageItem: AppImageItem(
               appItemImageModel: AppItemImageModel(

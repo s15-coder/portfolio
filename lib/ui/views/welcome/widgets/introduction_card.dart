@@ -8,12 +8,12 @@ class IntroductionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final isMobileDevice = DeviceWidthChecker.isMobileWidth(context);
     return Container(
       alignment: Alignment.center,
-      margin: EdgeInsets.symmetric(
-          horizontal: size.width > 750 ? 0 : 30, vertical: UILayout.xxxlarge),
-      height: 380,
+      margin: EdgeInsets.only(
+        top: !isMobileDevice ? 200 : UILayout.large,
+      ),
       constraints: const BoxConstraints(maxWidth: 300),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -26,7 +26,8 @@ class IntroductionCard extends StatelessWidget {
             alignment: Alignment.topCenter,
             child: Transform.translate(
               offset: const Offset(0, -50),
-              child: CustomCircularContainer(
+              child: CircularContainer(
+                size: UILayout.xxxlarge,
                 child: AppImage(
                   image: AppImages.me,
                 ),
@@ -34,7 +35,12 @@ class IntroductionCard extends StatelessWidget {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(left: 20, right: 20, top: 80),
+            margin: const EdgeInsets.only(
+              left: UILayout.large,
+              right: UILayout.large,
+              top: UILayout.xxlarge,
+              bottom: UILayout.xlarge,
+            ),
             child: Text(
               'Here, you\'ll discover everything about my extensive expertise and journey as a seasoned Mobile Developer. Explore the depths of my experience and skills right at your fingertips!',
               textAlign: TextAlign.center,

@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
-class CustomCircularContainer extends StatelessWidget {
-  const CustomCircularContainer({Key? key, required this.child})
-      : super(key: key);
+class CircularContainer extends StatelessWidget {
+  const CircularContainer({
+    Key? key,
+    required this.child,
+    required this.size,
+  }) : super(key: key);
   final Widget child;
+  final double size;
   @override
   Widget build(BuildContext context) {
     return ClipOval(
       child: Container(
         padding: const EdgeInsets.all(7),
         color: Colors.white,
-        height: 100,
-        width: 100,
+        height: size,
+        width: size,
         child: ClipOval(child: child),
       ),
     );

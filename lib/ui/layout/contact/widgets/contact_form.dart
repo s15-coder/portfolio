@@ -15,52 +15,55 @@ class _ContactFormState extends State<ContactForm> {
   Widget build(BuildContext context) {
     final contactFormProvider =
         Provider.of<ContactFormProvider>(context, listen: false);
-    final size = MediaQuery.of(context).size;
-    return Form(
-        autovalidateMode: AutovalidateMode.always,
-        key: contactFormProvider.formKey,
-        child: SizedBox(
-          width: 700,
-          child: Column(
-            children: [
-              if (size.width > 700)
-                Row(
-                  children: [
-                    Expanded(
-                        child: CustomField(
-                      label: 'Name',
-                      validator: ContactFormProvider.validateName,
-                      onChanged: (value) => contactFormProvider.name = value,
-                    )),
-                    Expanded(
-                        child: CustomField(
-                      label: 'Email',
-                      validator: ContactFormProvider.validateEmail,
-                      onChanged: (value) => contactFormProvider.email = value,
-                    )),
-                  ],
-                ),
-              if (size.width <= 700) ...[
+    return LayoutBuilder(builder: (_, BoxConstraints contrainsts) {
+      return Form(
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          key: contactFormProvider.formKey,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 700),
+            child: Column(
+              children: [
+                if (contrainsts.maxWidth > 700)
+                  Row(
+                    children: [
+                      Expanded(
+                          child: CustomField(
+                        label: 'Name',
+                        validator: ContactFormProvider.validateName,
+                        onChanged: (value) => contactFormProvider.name = value,
+                      )),
+                      Expanded(
+                          child: CustomField(
+                        label: 'Email',
+                        validator: ContactFormProvider.validateEmail,
+                        onChanged: (value) => contactFormProvider.email = value,
+                      )),
+                    ],
+                  ),
+                if (contrainsts.maxWidth <= 700) ...[
+                  CustomField(
+                    label: 'Name',
+                    maxLines: 1,
+                    validator: ContactFormProvider.validateName,
+                    onChanged: (value) => contactFormProvider.name = value,
+                  ),
+                  CustomField(
+                    label: 'Email',
+                    maxLines: 1,
+                    validator: ContactFormProvider.validateEmail,
+                    onChanged: (value) => contactFormProvider.email = value,
+                  ),
+                ],
                 CustomField(
-                  label: 'Name',
-                  validator: ContactFormProvider.validateName,
-                  onChanged: (value) => contactFormProvider.name = value,
-                ),
-                CustomField(
-                  label: 'Email',
-                  validator: ContactFormProvider.validateEmail,
-                  onChanged: (value) => contactFormProvider.email = value,
-                ),
+                  label: 'Message',
+                  maxLines: 5,
+                  minLines: 3,
+                  validator: ContactFormProvider.validateMessage,
+                  onChanged: (value) => contactFormProvider.message = value,
+                )
               ],
-              CustomField(
-                label: 'Message',
-                maxLines: 9,
-                minLines: 8,
-                validator: ContactFormProvider.validateMessage,
-                onChanged: (value) => contactFormProvider.message = value,
-              )
-            ],
-          ),
-        ));
+            ),
+          ));
+    });
   }
 }

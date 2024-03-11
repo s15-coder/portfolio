@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:estebancoder/config/config.dart';
 
 class UIFonts {
-  static TextStyle title = TextStyle(color: AppColors.grey);
+  static TextStyle title = TextStyle(
+    color: AppColors.grey,
+    fontSize: 24,
+  );
+  static TextStyle titleBold = title.copyWith(fontWeight: FontWeight.w900);
   static TextStyle subtitle = TextStyle(
     color: AppColors.grey,
     fontSize: 20,

@@ -1,27 +1,26 @@
+import 'package:estebancoder/config/styles/styles.dart';
+import 'package:estebancoder/ui/views/experience/widgets/experience_items.dart';
 import 'package:flutter/material.dart';
-import 'package:estebancoder/ui/views/experience/widgets/certification_caroucel.dart';
 
 class ExperienceView extends StatelessWidget {
   const ExperienceView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final bool isMobileWidth = DeviceWidthChecker.isMobileWidth(context);
     return Column(
-      mainAxisAlignment: size.width > 750
-          ? MainAxisAlignment.spaceAround
-          : MainAxisAlignment.spaceEvenly,
       children: [
         Text(
-          'CERTIFICATIONS',
+          'EXPERIENCE',
           maxLines: 2,
           style: TextStyle(
             color: Colors.white,
-            fontSize: size.width > 750 ? 55 : 40,
+            fontSize: isMobileWidth ? 34 : 50,
             fontWeight: FontWeight.bold,
           ),
         ),
-        const CertificatonCaroucel(),
+        SizedBox(height: isMobileWidth ? UILayout.xlarge : UILayout.xxlarge),
+        const ExperienceItems(),
       ],
     );
   }

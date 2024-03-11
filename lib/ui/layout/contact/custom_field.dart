@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CustomField extends StatelessWidget {
-  const CustomField(
-      {Key? key,
-      required this.label,
-      this.maxLines,
-      this.minLines,
-      this.textCapitalization = TextCapitalization.sentences,
-      this.onChanged,
-      this.validator})
-      : super(key: key);
+  const CustomField({
+    Key? key,
+    required this.label,
+    this.maxLines,
+    this.minLines,
+    this.textCapitalization = TextCapitalization.sentences,
+    this.onChanged,
+    this.validator,
+  }) : super(key: key);
   final String label;
   final TextCapitalization textCapitalization;
   final int? maxLines;

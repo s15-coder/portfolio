@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:estebancoder/config/config.dart';
 import 'package:estebancoder/core/images/images.dart';
 import 'package:estebancoder/models/app_item_model.dart';
-import 'package:estebancoder/providers/page_provider.dart';
 import 'package:estebancoder/services/alerts_service.dart';
 import 'package:estebancoder/ui/views/projects/widgets/app_item_image_option.dart';
-import 'package:provider/provider.dart';
 
 class AppImageItem extends StatefulWidget {
   const AppImageItem({
@@ -43,7 +41,6 @@ class _AppItemState extends State<AppImageItem> with TickerProviderStateMixin {
     return GestureDetector(
       onTap: () {
         if (size.width > 700) return;
-        final pageProvider = Provider.of<PageProvider>(context, listen: false);
         AlertsService.showDecoratedAlert(
             context: context,
             color: AppColors.mint,

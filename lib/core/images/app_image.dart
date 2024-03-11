@@ -20,6 +20,7 @@ class AppImage extends StatelessWidget {
   final bool useCache;
   @override
   Widget build(BuildContext context) {
+    debugPrint(image.path);
     return Image.network(
       image.path,
       fit: boxFit ?? BoxFit.contain,

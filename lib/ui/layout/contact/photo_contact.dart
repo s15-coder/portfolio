@@ -1,3 +1,4 @@
+import 'package:estebancoder/config/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:estebancoder/core/images/images.dart';
 import 'package:estebancoder/ui/widgets/custom_circular_container.dart';
@@ -11,7 +12,8 @@ class PhotoContact extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 30),
       width: double.infinity,
       alignment: Alignment.topCenter,
-      child: CustomCircularContainer(
+      child: CircularContainer(
+        size: UILayout.xxxlarge,
         child: Container(
           padding: const EdgeInsets.all(5),
           child: ClipOval(

@@ -1,3 +1,4 @@
+import 'package:estebancoder/config/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:estebancoder/ui/views/projects/widgets/projects_list.dart';
 
@@ -6,7 +7,8 @@ class ProjectsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    final bool isMobileWidth = DeviceWidthChecker.isMobileWidth(context);
+    return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Text(
@@ -14,11 +16,12 @@ class ProjectsView extends StatelessWidget {
           maxLines: 2,
           style: TextStyle(
             color: Colors.white,
-            fontSize: 55,
+            fontSize: isMobileWidth ? 34 : 50,
             fontWeight: FontWeight.bold,
           ),
         ),
-        ProjectsWidget(),
+        SizedBox(height: isMobileWidth ? UILayout.xlarge : UILayout.xxlarge),
+        const ProjectsWidget(),
       ],
     );
   }

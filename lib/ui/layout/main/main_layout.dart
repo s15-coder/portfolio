@@ -1,3 +1,5 @@
+import 'package:estebancoder/config/styles/styles.dart';
+import 'package:estebancoder/ui/views/contact/contact_view.dart';
 import 'package:flutter/material.dart';
 import 'package:estebancoder/config/config.dart';
 import 'package:estebancoder/ui/layout/main/widgets/custom_app_bar.dart';
@@ -11,6 +13,7 @@ class MainLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final bool isMobileWidth = DeviceWidthChecker.isMobileWidth(context);
     return Scaffold(
       body: Container(
         color: AppColors.navy,
@@ -21,10 +24,20 @@ class MainLayout extends StatelessWidget {
             ListView(
               scrollDirection: Axis.vertical,
               physics: const BouncingScrollPhysics(),
-              children: const [
-                WelcomeView(),
-                ProjectsView(),
-                ExperienceView(),
+              children: [
+                const WelcomeView(),
+                SizedBox(
+                  height: !isMobileWidth ? UILayout.xxxlarge : UILayout.xxlarge,
+                ),
+                const ProjectsView(),
+                SizedBox(
+                  height: !isMobileWidth ? UILayout.xxxlarge : UILayout.xxlarge,
+                ),
+                const ExperienceView(),
+                SizedBox(
+                  height: !isMobileWidth ? UILayout.xxxlarge : UILayout.xxlarge,
+                ),
+                const ContactView()
               ],
             ),
             const CustomAppBar(),

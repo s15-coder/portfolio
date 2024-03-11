@@ -23,10 +23,14 @@ class AppItem extends StatelessWidget {
       return Column(
         children: [
           TextColumn(
-              width: MediaQuery.of(context).size.width * .8,
-              title: title,
-              subtitle: subtitle,
-              description: description),
+            width: MediaQuery.of(context).size.width * .8,
+            title: title,
+            subtitle: subtitle,
+            description: description,
+          ),
+          const SizedBox(
+            height: UILayout.large,
+          ),
           appImageItem,
         ],
       );
@@ -40,7 +44,7 @@ class AppItem extends StatelessWidget {
             title: title,
             subtitle: subtitle,
             description: description),
-        SizedBox(
+        const SizedBox(
           width: UILayout.xlarge,
         ),
         appImageItem,
