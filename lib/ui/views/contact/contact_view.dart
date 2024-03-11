@@ -31,6 +31,7 @@ class ContactView extends StatelessWidget {
         ),
         child: Column(
           children: [
+            const SizedBox(height: UILayout.medium),
             Text(
               'CONTACT',
               style: TextStyle(
