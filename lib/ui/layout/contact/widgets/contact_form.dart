@@ -71,19 +71,24 @@ class _ContactFormState extends State<ContactForm> {
                     if (!contactFormProvider.formKey.currentState!.validate()) {
                       return;
                     }
-                    AlertsService.loadingAlert(context);
+
+                    await NavigatorProvider.openProgressDialog(context);
                     final success = await contactFormProvider.sendMessage();
-                    Navigator.pop(context);
+                    await NavigatorProvider.closeProgressDialog();
+
+                    String message = success
+                        ? 'Your message has been successfully received. Thank you!'
+                        : "Message delivery failed. Please try again later.";
                     if (success) {
                       contactAlert(
                         context,
-                        "Your message has been received successfully.",
+                        message,
                         Icons.check,
                       );
                     } else {
                       contactAlert(
                         context,
-                        "Sorry, there was an error sending your message.",
+                        message,
                         Icons.close,
                       );
                     }
@@ -100,31 +105,22 @@ class _ContactFormState extends State<ContactForm> {
     String text,
     IconData icon,
   ) async {
-    await AlertsService.showDecoratedAlert(
-      color: AppColors.mint,
+    Future.delayed(const Duration(seconds: 4), () {
+      Navigator.pop(context);
+    });
+    await showGradientDialog(
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
             text,
             textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 15),
-          Row(
-            children: [
-              const Spacer(),
-              MaterialButton(
-                onPressed: () => Navigator.pop(context),
-                color: AppColors.mint,
-                child: const Text(
-                  'OK',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              const SizedBox(
-                width: 10,
-              )
-            ],
+            style: const TextStyle(
+              height: 1.5,
+              fontSize: 20,
+              fontWeight: FontWeight.w200,
+              color: Colors.white,
+            ),
           ),
           const SizedBox(height: 10),
         ],

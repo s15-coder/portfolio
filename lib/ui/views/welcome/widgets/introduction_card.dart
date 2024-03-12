@@ -45,10 +45,11 @@ class IntroductionCard extends StatelessWidget {
               'Here, you\'ll discover everything about my extensive expertise and journey as a seasoned Mobile Developer. Explore the depths of my experience and skills right at your fingertips!',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  height: 1.5,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w200,
-                  color: Colors.black.withOpacity(0.6)),
+                height: 1.5,
+                fontSize: 20,
+                fontWeight: FontWeight.w200,
+                color: Colors.black.withOpacity(0.6),
+              ),
             ),
           )
         ],
