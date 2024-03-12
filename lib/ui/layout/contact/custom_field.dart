@@ -21,6 +21,8 @@ class CustomField extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
       child: TextFormField(
+        cursorColor: Colors.white,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
         onChanged: onChanged,
         validator: validator,
         keyboardType: TextInputType.multiline,

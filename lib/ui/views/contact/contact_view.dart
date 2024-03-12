@@ -11,77 +11,79 @@ class ContactView extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool isMobileWidth = DeviceWidthChecker.isMobileWidth(context);
     return DecoratedBox(
-        decoration: BoxDecoration(
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(
-              UILayout.xxlarge,
-            ),
-            topRight: Radius.circular(
-              UILayout.xxlarge,
-            ),
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(
+            UILayout.xxlarge,
           ),
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              AppColors.purple,
-              AppColors.navy,
-            ],
+          topRight: Radius.circular(
+            UILayout.xxlarge,
           ),
         ),
-        child: Column(
-          children: [
-            const SizedBox(height: UILayout.medium),
-            Text(
-              'CONTACT',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: isMobileWidth ? 28 : 28,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            isMobileWidth
-                ? const Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      ContactDetails(),
-                      ContactForm(),
-                    ],
-                  )
-                : Padding(
-                    padding: UIPadding.padding_24,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        const ContactDetails(),
-                        SizedBox(
-                          width: 400,
-                          child: DecoratedBox(
-                              decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.circular(UILayout.large),
-                                gradient: LinearGradient(
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                  colors: [
-                                    AppColors.purple,
-                                    AppColors.navy,
-                                  ],
-                                ),
-                              ),
-                              child: const Padding(
-                                padding: UIPadding.paddingV24,
-                                child: Column(
-                                  children: [
-                                    ContactForm(),
-                                  ],
-                                ),
-                              )),
-                        )
-                      ],
-                    ),
-                  ),
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            AppColors.purple,
+            AppColors.navy,
           ],
-        ));
+        ),
+      ),
+      child: Column(
+        children: [
+          const SizedBox(height: UILayout.medium),
+          Text(
+            'CONTACT',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: isMobileWidth ? 28 : 28,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          isMobileWidth
+              ? const Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    ContactDetails(),
+                    ContactForm(),
+                  ],
+                )
+              : Padding(
+                  padding: UIPadding.padding_24,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      const ContactDetails(),
+                      SizedBox(
+                        width: 400,
+                        child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.circular(UILayout.large),
+                              gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: [
+                                  AppColors.purple,
+                                  AppColors.navy,
+                                ],
+                              ),
+                            ),
+                            child: const Padding(
+                              padding: UIPadding.paddingV24,
+                              child: Column(
+                                children: [
+                                  ContactForm(),
+                                ],
+                              ),
+                            )),
+                      )
+                    ],
+                  ),
+                ),
+          const SizedBox(height: UILayout.xxlarge),
+        ],
+      ),
+    );
   }
 }
