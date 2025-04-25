@@ -9,10 +9,8 @@ class AppItem extends StatelessWidget {
     required this.appImageItem,
     required this.description,
     required this.subtitle,
-    required this.title,
     required this.textDirection,
   }) : super(key: key);
-  final String title;
   final String subtitle;
   final String description;
   final AppImageItem appImageItem;
@@ -24,7 +22,6 @@ class AppItem extends StatelessWidget {
         children: [
           TextColumn(
             width: MediaQuery.of(context).size.width * .8,
-            title: title,
             subtitle: subtitle,
             description: description,
           ),
@@ -41,7 +38,6 @@ class AppItem extends StatelessWidget {
       children: [
         TextColumn(
             width: MediaQuery.of(context).size.width * .3,
-            title: title,
             subtitle: subtitle,
             description: description),
         const SizedBox(
@@ -56,13 +52,11 @@ class AppItem extends StatelessWidget {
 class TextColumn extends StatelessWidget {
   const TextColumn({
     Key? key,
-    required this.title,
     required this.subtitle,
     required this.description,
     required this.width,
   }) : super(key: key);
 
-  final String title;
   final String subtitle;
   final String description;
   final double width;
@@ -73,10 +67,6 @@ class TextColumn extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            title,
-            style: UIFonts.subtitle,
-          ),
           Text(
             subtitle,
             style: UIFonts.subtitleBold,

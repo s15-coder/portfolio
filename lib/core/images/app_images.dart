@@ -10,19 +10,23 @@ class AppImages {
     ext: 'jpg',
   );
   static AppImageAsset cashiersHelper = AppImageAsset(
-    name: 'cashiers_helper',
+    name: 'cashiers_helpe',
   );
   static AppImageAsset flutterWeb = AppImageAsset(
     name: 'flutter_web',
     ext: 'jpg',
   );
   static AppImageAsset me = AppImageAsset(
-    name: 'me',
+    name: 'me_professional',
     ext: 'jpg',
   );
   static AppImageAsset rickAndMorty = AppImageAsset(
     name: 'rick_and_morty',
     ext: 'jpg',
+  );
+  static AppImageAsset featureMatchingPairs = AppImageAsset(
+    name: 'feature_matching_pairs',
+    ext: 'png',
   );
   static AppImageAsset tasksList = AppImageAsset(
     name: 'tasks_list',

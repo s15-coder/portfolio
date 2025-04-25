@@ -17,4 +17,10 @@ class AppConstants {
       'https://play.google.com/store/apps/details?id=com.tasksapp.esteban';
   static String rickAndMortyGithub =
       'https://github.com/s15-coder/Rick-And-Morty-APP';
+  static String countryPairsGithub =
+      'https://github.com/s15-coder/Country-Pairs';
+  static String countryPairsPlayStore =
+      'https://play.google.com/store/apps/details?id=com.countrypairs';
+  static String countryPairsAppStore =
+      'https://apps.apple.com/ca/app/country-pairs/id6744872290';
 }

@@ -8,50 +8,30 @@ class IntroductionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isMobileDevice = DeviceWidthChecker.isMobileWidth(context);
+    final bool isMobileWidth = DeviceWidthChecker.isMobileWidth(context);
+
     return Container(
-      alignment: Alignment.center,
-      margin: EdgeInsets.only(
-        top: !isMobileDevice ? 200 : UILayout.large,
-      ),
-      constraints: const BoxConstraints(maxWidth: 300),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Stack(
+      width: isMobileWidth ? 300 : 400,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            width: double.infinity,
-            alignment: Alignment.topCenter,
-            child: Transform.translate(
-              offset: const Offset(0, -50),
-              child: CircularContainer(
-                size: UILayout.xxxlarge,
-                child: AppImage(
-                  image: AppImages.me,
-                ),
-              ),
+          CircularContainer(
+            size: 150,
+            child: AppImage(
+              image: AppImages.me,
+              boxFit: BoxFit.cover,
             ),
           ),
-          Container(
-            margin: const EdgeInsets.only(
-              left: UILayout.large,
-              right: UILayout.large,
-              top: UILayout.xxlarge,
-              bottom: UILayout.xlarge,
+          const SizedBox(height: UILayout.xlarge),
+          Text(
+            'Hello, I am Esteban and here you can get to know more about my Mobile Development Journey.',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
             ),
-            child: Text(
-              'Here, you\'ll discover everything about my extensive expertise and journey as a seasoned Mobile Developer. Explore the depths of my experience and skills right at your fingertips!',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                height: 1.5,
-                fontSize: 20,
-                fontWeight: FontWeight.w200,
-                color: Colors.black.withOpacity(0.6),
-              ),
-            ),
-          )
+            textAlign: TextAlign.center,
+          ),
         ],
       ),
     );

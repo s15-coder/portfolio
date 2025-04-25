@@ -88,7 +88,7 @@ class _AppItemState extends State<AppImageItem> with TickerProviderStateMixin {
                             .toList(),
                         if (widget.appItemImageModel.textBelow != null)
                           Container(
-                            margin: const EdgeInsets.symmetric(vertical: 15),
+                            margin: const EdgeInsets.symmetric(vertical: 8),
                             alignment: Alignment.center,
                             child: Text(
                               widget.appItemImageModel.textBelow!,

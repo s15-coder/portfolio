@@ -46,10 +46,6 @@ Future<void> showGradientDialog({
                 child: Container(
                   height: 50,
                   width: 50,
-                  child: Icon(
-                    icon,
-                    color: Colors.white,
-                  ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(UILayout.large),
                     gradient: LinearGradient(
@@ -60,6 +56,10 @@ Future<void> showGradientDialog({
                         AppColors.navy,
                       ],
                     ),
+                  ),
+                  child: Icon(
+                    icon,
+                    color: Colors.white,
                   ),
                 ),
               ),

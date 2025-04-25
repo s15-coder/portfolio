@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:estebancoder/core/images/images.dart';
-import 'package:estebancoder/ui/layout/main/widgets/contact_button.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({Key? key}) : super(key: key);
@@ -22,7 +21,6 @@ class CustomAppBar extends StatelessWidget {
             child: AppImage(image: AppImages.appIcon),
           ),
           const Spacer(),
-          const ContactButton(),
           const SizedBox(width: 20),
         ],
       ),

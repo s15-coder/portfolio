@@ -8,7 +8,7 @@ import 'package:estebancoder/ui/views/projects/projects_view.dart';
 import 'package:estebancoder/ui/views/welcome/welcome_view.dart';
 
 class MainLayout extends StatelessWidget {
-  const MainLayout({Key? key, this.index = 0}) : super(key: key);
+  const   MainLayout({Key? key, this.index = 0}) : super(key: key);
   final int index;
   @override
   Widget build(BuildContext context) {

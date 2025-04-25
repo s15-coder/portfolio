@@ -8,14 +8,16 @@ class WelcomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bool isMobileWidth = DeviceWidthChecker.isMobileWidth(context);
-    return SizedBox(
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        vertical: UILayout.xxxlarge,
+        horizontal: isMobileWidth ? UILayout.xlarge : UILayout.xxxlarge,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Column(
-            crossAxisAlignment: isMobileWidth
-                ? CrossAxisAlignment.center
-                : CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               if (isMobileWidth) const SizedBox(height: UILayout.xxxlarge),
               Text(
@@ -23,7 +25,7 @@ class WelcomeView extends StatelessWidget {
                 maxLines: 2,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: isMobileWidth ? 40 : 70,
+                  fontSize: isMobileWidth ? 40 : 64,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -32,7 +34,7 @@ class WelcomeView extends StatelessWidget {
                 maxLines: 2,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: isMobileWidth ? 40 : 70,
+                  fontSize: isMobileWidth ? 40 : 64,
                   fontWeight: FontWeight.bold,
                 ),
               ),
