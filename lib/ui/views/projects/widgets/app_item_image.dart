@@ -60,11 +60,11 @@ class _AppItemState extends State<AppImageItem> with TickerProviderStateMixin {
                 height: 170,
                 width: 300,
                 child: Transform.scale(
+                  scale: 1.1,
                   child: AppImage(
                     image: widget.appItemImageModel.appImageAsset,
                     boxFit: BoxFit.fitWidth,
                   ),
-                  scale: 1.1,
                 ),
               ),
             ),
@@ -79,13 +79,12 @@ class _AppItemState extends State<AppImageItem> with TickerProviderStateMixin {
                   child: Container(
                     height: 170,
                     width: 300,
+                    color: Colors.black.withOpacity(.6),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        ...widget.appItemImageModel.options
-                            .map((e) =>
-                                AppItemImageOption(appItemImageOptionModel: e))
-                            .toList(),
+                        ...widget.appItemImageModel.options.map((e) =>
+                            AppItemImageOption(appItemImageOptionModel: e)),
                         if (widget.appItemImageModel.textBelow != null)
                           Container(
                             margin: const EdgeInsets.symmetric(vertical: 8),
@@ -100,7 +99,6 @@ class _AppItemState extends State<AppImageItem> with TickerProviderStateMixin {
                           )
                       ],
                     ),
-                    color: Colors.black.withOpacity(.6),
                   ),
                 ),
               ),

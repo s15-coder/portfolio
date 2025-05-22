@@ -89,4 +89,34 @@ class AppImages {
     ext: 'png',
     ref: 'tools_and_languages',
   );
+  static AppImageAsset angularIcon = AppImageAsset(
+    name: 'angular',
+    ext: 'png',
+    ref: 'tools_and_languages',
+  );
+  static AppImageAsset mongoIcon = AppImageAsset(
+    name: 'mongodb',
+    ext: 'png',
+    ref: 'tools_and_languages',
+  );
+  static AppImageAsset reactIcon = AppImageAsset(
+    name: 'react',
+    ext: 'png',
+    ref: 'tools_and_languages',
+  );
+  static AppImageAsset typescriptIcon = AppImageAsset(
+    name: 'typescript',
+    ext: 'png',
+    ref: 'tools_and_languages',
+  );
+  static AppImageAsset database = AppImageAsset(
+    name: 'database',
+    ext: 'png',
+    ref: 'tools_and_languages',
+  );
+  static AppImageAsset postgresqlIcon = AppImageAsset(
+    name: 'postgres',
+    ext: 'png',
+    ref: 'tools_and_languages',
+  );
 }

@@ -16,10 +16,10 @@ class PhotoContact extends StatelessWidget {
         size: UILayout.xxxlarge,
         child: Container(
           padding: const EdgeInsets.all(5),
+          color: pageColor,
           child: ClipOval(
             child: AppImage(image: AppImages.me),
           ),
-          color: pageColor,
         ),
       ),
     );

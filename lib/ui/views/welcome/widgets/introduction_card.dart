@@ -10,7 +10,7 @@ class IntroductionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool isMobileWidth = DeviceWidthChecker.isMobileWidth(context);
 
-    return Container(
+    return SizedBox(
       width: isMobileWidth ? 300 : 400,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -24,13 +24,12 @@ class IntroductionCard extends StatelessWidget {
           ),
           const SizedBox(height: UILayout.xlarge),
           Text(
-            'Hello, I am Esteban and here you can get to know more about my Mobile Development Journey.',
+            'Esteban Barragán',
             style: TextStyle(
               color: Colors.white,
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
-            textAlign: TextAlign.center,
           ),
         ],
       ),

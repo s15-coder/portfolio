@@ -21,7 +21,7 @@ class WelcomeView extends StatelessWidget {
             children: [
               if (isMobileWidth) const SizedBox(height: UILayout.xxxlarge),
               Text(
-                'MOBILE',
+                'Software',
                 maxLines: 2,
                 style: TextStyle(
                   color: Colors.white,
@@ -30,7 +30,7 @@ class WelcomeView extends StatelessWidget {
                 ),
               ),
               Text(
-                'DEVELOPER',
+                'Developer',
                 maxLines: 2,
                 style: TextStyle(
                   color: Colors.white,

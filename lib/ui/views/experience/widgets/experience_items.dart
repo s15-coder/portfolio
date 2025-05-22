@@ -14,10 +14,43 @@ class ExperienceItems extends StatelessWidget {
       spacing: isMobileWidth ? UILayout.xlarge : UILayout.xxlarge,
       runSpacing: isMobileWidth ? UILayout.xlarge : UILayout.xxlarge,
       children: [
+        // Core Languages
         ExperienceItem(
           appImageAsset: AppImages.dartIcon,
           toolName: 'Dart',
         ),
+        ExperienceItem(
+          appImageAsset: AppImages.kotlinIcon,
+          toolName: 'Kotlin',
+        ),
+        ExperienceItem(
+          appImageAsset: AppImages.javascriptIcon,
+          toolName: 'Javascript',
+        ),
+        ExperienceItem(
+          appImageAsset: AppImages.typescriptIcon,
+          toolName: 'TypeScript',
+        ),
+
+        // Frameworks & Libraries
+        ExperienceItem(
+          appImageAsset: AppImages.flutterIcon,
+          toolName: 'Flutter',
+        ),
+        ExperienceItem(
+          appImageAsset: AppImages.reactIcon,
+          toolName: 'React',
+        ),
+        ExperienceItem(
+          appImageAsset: AppImages.angularIcon,
+          toolName: 'Angular',
+        ),
+        ExperienceItem(
+          appImageAsset: AppImages.nodejsIcon,
+          toolName: 'Node JS',
+        ),
+
+        // Platforms
         ExperienceItem(
           appImageAsset: AppImages.androidIcon,
           toolName: 'Android',
@@ -26,25 +59,19 @@ class ExperienceItems extends StatelessWidget {
           appImageAsset: AppImages.appleIcon,
           toolName: 'iOS',
         ),
-        ExperienceItem(
-          appImageAsset: AppImages.flutterIcon,
-          toolName: 'Flutter',
-        ),
-        ExperienceItem(
-          appImageAsset: AppImages.kotlinIcon,
-          toolName: 'Kotlin',
-        ),
+
+        // Databases & Backend
         ExperienceItem(
           appImageAsset: AppImages.firebaseIcon,
           toolName: 'Firebase',
         ),
         ExperienceItem(
-          appImageAsset: AppImages.javascriptIcon,
-          toolName: 'Javascript',
+          appImageAsset: AppImages.mongoIcon,
+          toolName: 'MongoDB',
         ),
         ExperienceItem(
-          appImageAsset: AppImages.nodejsIcon,
-          toolName: 'Node JS',
+          appImageAsset: AppImages.postgresqlIcon,
+          toolName: 'PostgreSQL',
         ),
       ],
     );
